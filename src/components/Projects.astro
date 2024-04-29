@@ -1,0 +1,78 @@
+---
+import Html from '../icons/Html.astro'
+import Css from '../icons/Css.astro'
+import Javascript from '../icons/Javascript.astro'
+import GithubIcon from '../icons/Github.astro'
+import Search from '../icons/Search.astro'
+
+const TAGS = {
+    HTML: {
+        name:"HTML",
+        class:"bg-red-400 text-white",
+        icon: Html,
+    },
+    CSS: {
+        name:"CSS",
+        class:"bg-blue-500 text-white",
+        icon: Css,
+    },
+    JAVASCRIPT: {
+        name:"JAVASCRIPT",
+        class:"bg-yellow-600 text-white",
+        icon: Javascript,
+    }
+}
+
+const TAGLINK = {
+    SEARCH: {
+        name:"SEARCH",
+        class:"bg-black text-white",
+        icon: Search,
+    },
+    GITHUB: {
+        name:"GITHUB",
+        class:"bg-black text-white",
+        icon: GithubIcon,
+    }
+}
+
+const PROJECTS = [
+    {
+        title:'API Rick & Morty - Primer Proyecto',
+        description: 'Proyecto realizado en el Curso de Frontend, con el fin de aprender a consumir una API y dar primeros pasos en estilado de páginas.',
+        link: 'https://first-project-tiziano.vercel.app/',
+        github: 'https://github.com/TiziRR/First-Project',
+        image: '/projects/svgl.jpg',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+        tagLink: [TAGLINK.GITHUB, TAGLINK.SEARCH]
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, image, tags, link, github}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}    
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+            <div class="flex flex-row gap-x-3">
+                <a href={link} target="_blank">
+                    <TAGLINK.SEARCH.icon class="size-7 mt-2"/>
+                </a>
+                <a href={github} target="_blank">
+                    <TAGLINK.GITHUB.icon class="size-7 mt-2"/>
+                </a>
+            </div>
+        </article>
+    ))
+}
