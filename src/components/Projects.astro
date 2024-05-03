@@ -4,6 +4,9 @@ import Css from '../icons/Css.astro'
 import Javascript from '../icons/Javascript.astro'
 import GithubIcon from '../icons/Github.astro'
 import Search from '../icons/Search.astro'
+import Tailwind from '../icons/Tailwind.astro'
+import Mongo from '../icons/Mongo.astro'
+import React from '../icons/React.astro'
 
 const TAGS = {
     HTML: {
@@ -20,7 +23,23 @@ const TAGS = {
         name:"JAVASCRIPT",
         class:"bg-yellow-600 text-white",
         icon: Javascript,
+    },
+    REACT: {
+        name:"REACT",
+        class:"bg-sky-600 text-white",
+        icon: React,
+    },
+    MONGODB: {
+        name:"MONGODB",
+        class:"bg-green-500 text white",
+        icon: Mongo,
+    },
+    TAILWIND: {
+        name:"TAILWIND",
+        class:"bg-sky-400 text-white",
+        icon: Tailwind,
     }
+    
 }
 
 const TAGLINK = {
@@ -45,13 +64,22 @@ const PROJECTS = [
         image: '/projects/svgl.jpg',
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
         tagLink: [TAGLINK.GITHUB, TAGLINK.SEARCH]
+    },
+    {
+        title:'Prueba de un E-commerce - Segundo Proyecto',
+        description: 'Proyecto realizado en el Curso de Backend con React.js y en conjunto con mis compañeros Lautaro Zalazar y Gustavo Gomez, que consistió en recrear un e-commerce a elección.',
+        link: 'https://back-end-react-final-project.vercel.app/',
+        github: 'https://github.com/LautaroJLZ/BackEndReact',
+        image: '/projects/secondProject.jpg',
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.MONGODB],
+        tagLink: [TAGLINK.GITHUB, TAGLINK.SEARCH]
     }
 ]
 ---
 
 {
     PROJECTS.map(({title, description, image, tags, link, github}) => (
-        <article>
+        <article class="mt-5">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 flex-row mb-2">
@@ -67,10 +95,10 @@ const PROJECTS = [
             <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
             <div class="flex flex-row gap-x-3">
                 <a href={link} target="_blank">
-                    <TAGLINK.SEARCH.icon class="size-7 mt-2"/>
+                    <TAGLINK.SEARCH.icon class="size-7 mt-2 hover:scale-105 transition duration-300 ease-in-out"/>
                 </a>
                 <a href={github} target="_blank">
-                    <TAGLINK.GITHUB.icon class="size-7 mt-2"/>
+                    <TAGLINK.GITHUB.icon class="size-7 mt-2 hover:scale-105 transition duration-300 ease-in-out"/>
                 </a>
             </div>
         </article>
