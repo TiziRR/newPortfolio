@@ -1,0 +1,72 @@
+---
+import Javascript from "../icons/Javascript.astro";
+import Html from "../icons/Html.astro";
+import React from "../icons/React.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Css from "../icons/Css.astro";
+import Python from "../icons/Python.astro";
+import Java from "../icons/Java.astro";
+
+const APTITUDES = [
+    {
+        name: "JAVASCRIPT",
+        icon: Javascript,
+    },
+    {
+        name: "HTML",
+        icon: Html,
+    },
+    {
+        name: "REACT",
+        icon: React,
+    },
+    {
+        name: "TAILWIND",
+        icon: Tailwind,
+    },
+    {
+        name: "CSS",
+        icon: Css,
+    },
+];
+
+const ENPRACTICA = [
+    {
+        name: "JAVA",
+        icon: Java,
+    },
+    {
+        name: "PYTHON",
+        icon: Python,
+    }
+];
+---
+
+<article class="flex flex-col justify-between items-center gap-y-16">
+    <div class="w-full">
+        <h2 class="pb-6 text-2xl text-green-200">Validadas</h2>
+        <ul class="mx-auto flex flex-row justify-between">
+            {
+                APTITUDES.map((aptitud) => (
+                    <li class="hover:scale-110 transition-all ease-linear delay-75 gap-y-1 flex flex-col items-center justify-center">
+                        <aptitud.icon class="size-8" />
+                        <span class="text-xs">{aptitud.name}</span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <div class="w-full">
+        <h2 class="pb-6 text-2xl text-red-400/60">En práctica...</h2>
+        <ul class="mx-auto flex flex-row justify-around">
+            {
+                    ENPRACTICA.map((practica) => (
+                    <li class="hover:scale-125 transition-all ease-linear delay-75 gap-y-1 flex flex-col items-center justify-center">
+                        <practica.icon class="size-8" />
+                        <span class="text-xs">{practica.name}</span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</article>

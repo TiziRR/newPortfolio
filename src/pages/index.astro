@@ -5,11 +5,12 @@ import SectionContainer from "../components/SectionContainer.astro";
 import LinkedInIcon from "../icons/Linkedin.astro";
 import GithubIcon from "../icons/Github.astro";
 import SocialPill from "../components/SocialPill.astro";
-import MailIcon from "../icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import Briefcase from "../icons/Briefcase.astro";
 import CodeIcon from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
+import Unlock from "../icons/Unlock.astro";
+import Aptitudes from "../components/Aptitudes.astro";
 ---
 
 <Layout title="Portfolio de Tiziano - Desarrollador y Programador Web"
@@ -17,7 +18,7 @@ description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrol
 	<main class="px-4 mx-auto md:pr-14"
 		<SectionContainer class="py-44 pb-32">
 			<img
-				class="rounded-full size-12 mb-4"
+				class="rounded-2xl size-14 mb-4"
 				src="../../public/img-perfil.jpeg"
 				alt="tiziano photo"
 			/>
@@ -25,8 +26,6 @@ description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrol
 				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
 			>
 				Hola, soy Tiziano <a
-					href="#sobre-mi"
-					target="_blank"
 					rel="noopener"
 					class="flex justify-center items-center"
 					><Badge>Disponible para trabajar</Badge></a
@@ -40,7 +39,7 @@ description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrol
 					Tecnologica.</span
 				><span class="text-sky-200/90"> De Misiones, Argentina.</span>
 				<span class="opacity-75"
-					>Busco crear desde aplicaciones hasta interfaces visuales
+					>Busco crear aplicaciones e interfaces visuales
 					únicas.</span
 				>
 			</h2>
@@ -55,6 +54,14 @@ description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrol
 					Github
 				</SocialPill>
 			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="aptitudes" class="mx-auto pt-20">
+			<h2 class="text-3xl font-semibold flex gap-x-3 items-center pb-10">
+				<Unlock class="size-7" />
+				Aptitudes
+			</h2>
+			<Aptitudes/>
 		</SectionContainer>
 
 		<SectionContainer id="experiencia" class="mx-auto pt-20">
