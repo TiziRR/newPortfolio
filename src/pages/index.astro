@@ -13,8 +13,8 @@ import Unlock from "../icons/Unlock.astro";
 import Aptitudes from "../components/Aptitudes.astro";
 ---
 
-<Layout title="Portfolio de Tiziano - Desarrollador y Programador Web"
-description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrollador Web.">
+<Layout title="Portfolio de Tiziano - Desarrollador y Programador "
+description="Contrata a Tiziano para crear tu aplicación. Desarrollador Web.">
 	<main class="px-4 mx-auto md:pr-14"
 		<SectionContainer class="py-44 pb-32">
 			<img
@@ -56,15 +56,15 @@ description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrol
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="aptitudes" class="mx-auto pt-20">
+		<SectionContainer id="aptitudes" class="mx-auto pt-20 max-lg:px-10">
 			<h2 class="text-3xl font-semibold flex gap-x-3 items-center pb-10">
 				<Unlock class="size-7" />
 				Aptitudes
 			</h2>
-			<Aptitudes/>
+			<Aptitudes class="px-10 lg:px-0"/>
 		</SectionContainer>
 
-		<SectionContainer id="experiencia" class="mx-auto pt-20">
+		<SectionContainer id="experiencia" class="mx-auto pt-14 max-lg:px-10">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<Briefcase class="size-7" />
 				Experiencia
@@ -72,7 +72,7 @@ description="Contrata a Tiziano para crear tu aplicación web o móvil. Desarrol
 			<Experience />
 		</SectionContainer>
 
-		<SectionContainer id="proyectos">
+		<SectionContainer id="proyectos" class="max-lg:px-10">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<CodeIcon class="size-7" />
 				Proyectos

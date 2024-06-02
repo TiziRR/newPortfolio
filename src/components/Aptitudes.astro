@@ -48,7 +48,7 @@ const ENPRACTICA = [
         <ul class="mx-auto flex flex-row justify-between">
             {
                 APTITUDES.map((aptitud) => (
-                    <li class="hover:scale-110 transition-all ease-linear delay-75 gap-y-1 flex flex-col items-center justify-center">
+                    <li class="hover:scale-110 transition-all ease-linear delay-75 gap-y-1 cursor-pointer flex flex-col items-center justify-center">
                         <aptitud.icon class="size-8" />
                         <span class="text-xs">{aptitud.name}</span>
                     </li>
@@ -61,8 +61,8 @@ const ENPRACTICA = [
         <ul class="mx-auto flex flex-row justify-around">
             {
                     ENPRACTICA.map((practica) => (
-                    <li class="hover:scale-125 transition-all ease-linear delay-75 gap-y-1 flex flex-col items-center justify-center">
-                        <practica.icon class="size-8" />
+                    <li class="hover:scale-125 transition-all ease-linear delay-75 gap-y-1 cursor-pointer flex flex-col items-center justify-center">
+                        <practica.icon class="size-10" />
                         <span class="text-xs">{practica.name}</span>
                     </li>
                 ))
